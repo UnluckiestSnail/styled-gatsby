@@ -5,6 +5,27 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: 'My very good title'
+  },
+
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `ut7mynrq01vs`,
+        accessToken: `4trZ6MWTpNZhKAXMEiTEHsJNzSpeJbbHeULNQudd1L0`
+      },
+    },
+  ],
 }
